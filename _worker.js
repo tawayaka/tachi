@@ -2,7 +2,7 @@ export default {
   async fetch(request, env) {
     let url = new URL(request.url);
     if (url.pathname.startsWith('/')) {
-      url.hostname = 'voz.vn'
+      url.hostname = 'api.pawan.krd';
       let new_request = new Request(url, request);
       
       // Check if the request contains a cookie
@@ -17,7 +17,8 @@ export default {
           ...cachedResponse,
           headers: {
             ...cachedResponse.headers,
-            "Set-Cookie": cookie // Add the cookie to the response headers          }
+            "Set-Cookie": cookie // Add the cookie to the response headers
+          }
         });
         return response;
       } else {
