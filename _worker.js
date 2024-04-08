@@ -2,7 +2,7 @@ export default {
   async fetch(request, env) {
     let url = new URL(request.url);
     if (url.pathname.startsWith('/')) {
-      url.hostname = 'voz.vn';
+      url.hostname = 'google.com';
       let new_request = new Request(url, request);
       
       // Check if the request contains a cookie
